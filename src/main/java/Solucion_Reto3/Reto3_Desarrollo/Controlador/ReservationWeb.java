@@ -1,6 +1,8 @@
 package Solucion_Reto3.Reto3_Desarrollo.Controlador;
 
 import Solucion_Reto3.Reto3_Desarrollo.Modelo.Reservation;
+import Solucion_Reto3.Reto3_Desarrollo.Reportes.ContadorClientes;
+import Solucion_Reto3.Reto3_Desarrollo.Reportes.StatusReservas;
 import Solucion_Reto3.Reto3_Desarrollo.Servicios.serviciosReservation;
 import java.util.List;
 import java.util.Optional;
@@ -58,5 +60,24 @@ public class ReservationWeb {
     public boolean delete(@PathVariable("id") int reservationId) {
         return servicio.deleteReservation(reservationId);
     }     
+    
+    
+    @GetMapping("/report-status")
+    public StatusReservas getReservas(){
+        return servicio.getReporteStatusReservaciones();
+    }
+    
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        return servicio.getReportesTiempoReservaciones(dateOne, dateTwo);
+    }
+    
+    
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClientes(){
+        return servicio.servicioTopClientes();
+    
+    }
     
 }
