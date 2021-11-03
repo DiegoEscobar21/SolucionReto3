@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <hr>
+
+        <style>
+
+            table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            }
+            th, td {
+            border-color: #010413;
+            height:50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            }
+            tr:nth-child(even) {
+            background-color: #aee4e4;
+            }
+
+
+        </style>
+
+        <title> Reto_3_4_5_Ciclo3 </title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/misFunciones.js"></script>
+
+    </head>
+
+
+    <body style="background-color:rgb(202, 219, 201);">
+
+        
+        <h1 style="font-family:courier;"> Specialty </h1> <hr> <br>
+                    
+        <button onclick="traerInformacionSpecialty()"> Consultar Specialty </button>
+
+        <br>
+
+        <br> <div id="resultado1"> </div> 
+
+        <div>
+
+            <br>
+
+            <input type="text" id="Sname" placeholder="name">
+            <input type="text" id="Sdescription" placeholder="description">
+            
+            <br>
+
+        </div>
+
+        <br>
+
+        <button onclick="guardarInformacionSpecialty()"> Guardar Specialty </button>
+
+        <br>
+        <br>
+        <hr>
+        
+<!---------------------------------------------------------------------------------------------->
+        
+        
+        <h1 style="font-family:courier;"> Doctor </h1> <hr> <br>
+
+        <button onclick="traerInformacionDoctor()"> Consultar Doctor</button>
+
+        <br>
+
+        <br> <div id="miListaDoctor"> </div> 
+
+        <div>
+
+            <br>
+
+            <input type="text" id="name2" placeholder="name">
+            <input type="text" id="department" placeholder="department">
+            <input type="number" id="year" placeholder="year">
+            <input type="text" id="description2" placeholder="description">
+            
+            <select id="select-category"></select>
+            <script type="text/javascript">
+                window.onload = autoInicioSpecialty();
+            </script>
+            
+            <br>
+
+        </div>
+
+        <br>
+
+        <button onclick="agregarDoctor()"> Guardar Doctor </button>
+
+        <br>
+        <br>
+        <hr>
+
+
+<!---------------------------------------------------------------------------------------->
+
+
+        <h1 style="font-family:courier;"> Clientes </h1> <hr> <br>
+
+        <button onclick="traerInformacionClientes()"> Consultar Clientes</button>
+
+        <br>
+
+        <br> 
+        
+        <div id="resultado3"> </div> 
+        <script type="text/javascript"> 
+            window.onload = autoInicioCliente();
+        </script>
+        
+        <div>
+
+            <br>
+
+            <input type="text" id="Clemail" placeholder="email">
+            <input type="text" id="Clpassword" placeholder="password">
+            <input type="text" id="Clname" placeholder="name">
+            <input type="number" id="Clage" placeholder="age">
+            
+            
+            
+            <br>
+
+        </div>
+
+        <br>
+
+        <button onclick="guardarInformacionCliente()"> Guardar </button>
+
+        <br>
+        <br>
+        <hr>
+
+
+<!---------------------------------------------------------------------------------------->
+
+        <h1 style="font-family:courier;"> Message </h1> <hr> <br>
+
+        <br> <div id="resultadoMensajes"> </div> 
+        <script type="text/javascript"> 
+            window.onload = autoInicioMensajes();
+        </script>
+        
+        <div>
+
+        <br>
+
+        <input type="text" id="messageText" placeholder="messageText">
+                
+        <br>
+
+        </div>
+
+        <br>
+
+        <button onclick="guardarInformacionMensajes()"> Guardar Message</button>
+
+        <select id="select-client"></select>
+        <script type="text/javascript">
+            window.onload = autoInicioRelacionCliente();
+        </script>
+            <select id="select-doctor"></select>
+            <script type="text/javascript">
+                window.onload = autoInicioDoctor();
+            </script>
+        
+        <br>
+        <br>
+        <hr>   
+        
+<!---------------------------------------------------------------------------------------->
+
+
+        <h1 style="font-family:courier;"> Reportes </h1> <hr> <br>
+
+        <button onclick="traerReporteStatus()"> GenerarReporte Status </button>
+
+        <br>
+
+        <br> 
+        
+        <div id="resultadoStatus"> </div>
+        
+        <div>
+
+        <br>
+
+        <input type="date" id="RstarDate" placeholder="descripcion">
+        <input type="date" id="RdevolutionDate" placeholder="descripcion">
+        
+        <br>
+        
+        <button onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+        
+        <br>
+        
+        <div id="resultadoDate"></div>
+            
+        <br>
+
+        </div>
+
+        <br>
+
+        <button onclick="traerReporteClientes()"> Generar Reporte Clientes </button>
+
+        <div id="resultadoClientes"></div>
+        
+        <br>
+        <br>
+        <hr>
+
+        
+<!---------------------------------------------------------------------------------------->
+
+
+        <h1 style="font-family:courier;"> Reservaciones </h1> <hr> <br>
+        
+        <br>
+
+        <br> 
+        
+        <div>
+
+        <br>
+
+        <input type="date" id="startDate" placeholder="startDate">
+        <input type="date" id="devolutionDate" placeholder="devolutionDate">
+        <input type="text" id="status" placeholder="escriba completed o cancelled para el estado de la Reservacion ">
+        
+        <br>
+        
+        <select id="select-client"></select>
+        
+        <script type="text/javascript">
+            window.onload = autoInicioRelacionCliente();
+        </script>
+            <select id="select-doctor"></select>
+            <script type="text/javascript">
+                window.onload = autoInicioDoctor();
+            </script>
+        
+        <br>
+
+        </div>
+
+        <br>
+
+        <button onclick=" agregarReservation()">Guardar Reserva</button>
+
+        <div id="miListaReservation"></div>
+        
+        <br>
+        <br>
+        <hr>
+
+        
+        
+        
+
+    </body>
+
+
+</html>
